@@ -189,6 +189,51 @@ footer { display: flex; justify-content: space-between; padding: 18px 0 25px; bo
 .theme-light .room-head { color: var(--ink); }
 .theme-light .steps { border-color: var(--line); }
 
+/* Clearer profiles, drawing stages and responsive room controls. */
+.mode-visual svg { position: relative; z-index: 1; width: 58px; height: 58px; image-rendering: pixelated; }
+.float-pixel.float-left { top: 38px; left: 35px; transform: rotate(-12deg); }
+.float-pixel.float-right { right: 15px; top: 72px; transform: rotate(14deg); }
+.arcade-buttons b { width: 13px; height: 13px; border: 1px solid #111; border-radius: 50%; background: var(--orange); }
+.arcade-buttons b:last-child { background: var(--mint); }
+.avatar-options { display: grid; grid-template-columns: repeat(4, minmax(48px, 1fr)); gap: 9px; }
+.avatar { width: 54px; height: 54px; border: 2px solid var(--line); background: #292b30; transition: transform .12s, border-color .12s; }
+.avatar:hover { transform: translateY(-2px); border-color: var(--mint); }
+.avatar svg, .avatar-face svg { width: 34px; height: 34px; image-rendering: pixelated; }
+.avatar-face { flex: none; width: 36px; height: 36px; }
+.profile-hint { margin: -3px 0 9px !important; font-size: 11px !important; }
+.dialog { max-height: min(90vh, 760px); overflow-y: auto; }
+.modal { overflow-y: auto; }
+.room-head { display: block; position: relative; padding: 18px 0 20px; border-bottom: 1px solid var(--line); }
+.room-head-actions { display: flex; align-items: center; justify-content: space-between; }
+.room-head h1 { margin-top: 15px; }
+.room-head p { font-size: 12px; }
+.share { position: static; margin-top: 12px; }
+.reference-board { display: block; width: 100%; height: 280px; margin: 10px 0; border: 2px solid #090a0c; background: #fffdf4; touch-action: none; }
+.idea-tools { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 8px; }
+.idea-button, .speak-button { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 36px; padding: 7px 11px; border: 1px solid var(--line); border-radius: 2px; color: var(--ink); background: #282a2f; font: 10px var(--mono); }
+.idea-button:hover, .speak-button:hover { border-color: var(--mint); color: var(--mint); }
+.idea-button svg, .speak-button svg { width: 17px; height: 17px; }
+.speak-button { min-height: 30px; margin-left: 8px; padding: 4px 8px; vertical-align: middle; }
+.phone-content { display: flex; align-items: center; justify-content: space-between; gap: 10px; font-size: 15px; line-height: 1.5; }
+.phone-text { min-height: 92px; resize: vertical; line-height: 1.5; }
+.phone-form { align-items: end; }
+.phone-form .button { flex: none; }
+.mode-content p { min-height: 58px; font-size: 12px; line-height: 1.6; }
+.mode-bottom { font-size: 10px; }
+.public-room { min-width: 0; }
+.public-room > span { min-width: 0; flex: 1; }
+.public-room > span > svg { float: left; width: 34px; height: 34px; margin: 2px 9px 0 0; }
+.room-empty { grid-column: 1 / -1; min-height: 100px; gap: 8px; font-size: 11px; text-align: center; }
+.room-empty svg { width: 34px; height: 34px; }
+.guess input, .dialog input:not([type=checkbox]), .phone-text { font-size: 14px; }
+.side-panel { align-self: stretch; }
+.activity-log { font-size: 11px; }
+.player { font-size: 12px; }
+.player-name { min-width: 0; overflow-wrap: anywhere; }
+.button:disabled { cursor: not-allowed; opacity: .48; transform: none; box-shadow: none; }
+.theme-light .idea-button, .theme-light .speak-button { background: #fffaf0; }
+.theme-light .reference-board { border-color: var(--line); }
+
 @media (max-width:790px) {
   .mode-grid { grid-template-columns: 1fr; }
   .mode-card { grid-template-columns: 65px 1fr; }
@@ -229,6 +274,13 @@ footer { display: flex; justify-content: space-between; padding: 18px 0 25px; bo
   .room-head h1 { font-size: 27px; }
   .share { bottom: 22px; }
   .waiting { min-height: 290px; }
+  .avatar-options { grid-template-columns: repeat(4, minmax(46px, 1fr)); }
+  .avatar { width: 48px; height: 48px; }
+  .room-head-actions { align-items: flex-start; gap: 8px; }
+  .room-status { margin: 5px 0 0 auto; text-align: right; line-height: 1.5; }
+  .phone-form { align-items: stretch; flex-direction: column; }
+  .phone-form .button { width: 100%; }
+  .reference-board { height: 230px; }
 }
 @media (prefers-reduced-motion:reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; animation: none !important; }
